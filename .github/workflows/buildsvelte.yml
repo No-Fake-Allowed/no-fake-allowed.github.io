@@ -3,7 +3,8 @@ name: Build Svelte For GH_Pages
 
 on:
   # Runs on pushes targeting the default branch
-  pull-request:
+  pull_request:
+    types: [opened, reopened]
     branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab

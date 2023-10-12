@@ -3,7 +3,7 @@ name: Build Svelte For GH_Pages
 
 on:
   # Runs on pushes targeting the default branch
-  push:
+  pull-request:
     branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -35,11 +35,12 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Build For GH
         run: |
+          npm i
           npm run build && npx gh-pages -d build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # Upload entire repository
+          # Upload build
           path: './build'
       - name: Deploy to GitHub Pages
         id: deployment

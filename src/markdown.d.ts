@@ -1,4 +1,5 @@
 declare module '*.md' {
-    const value: string;
+    import {ConstructorOfATypedSvelteComponent} from 'svelte';
+    const value: ConstructorOfATypedSvelteComponent;
     export default value;
 }

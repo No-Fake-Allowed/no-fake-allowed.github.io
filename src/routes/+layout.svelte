@@ -14,7 +14,8 @@
     //Import Fade Anim
     import {fade} from "svelte/transition";
 
-    //
+
+    // On Navigate, Smooth Navigation
     onNavigate((navigation) => {
         if (!(document as any).startViewTransition) return;
 
@@ -28,25 +29,38 @@
 
     import NavigationHeader from "$lib/components/NavigationHeader.svelte";
     import AvatarProfile from "$lib/components/AvatarProfile.svelte";
+    import Footer from "$lib/components/Footer.svelte";
+
+    import type {PageData} from "../../.svelte-kit/types/src/routes/$types";
+
+    export let data:PageData;
+
 
 </script>
 
 
-<div class="flex flex-col w-screen h-screen items-center bg-ink-dark text-white"><!-- Slot, Which I Assume Places Page Content -->
+<div class="flex flex-col w-full h-fit pb-10 items-center bg-ink-dark text-white"><!-- Slot, Which I Assume Places Page Content -->
 
     <div class="flex flex-row gap-x-10">
 
         <!-- Sidebar -->
         <section class="flex flex-col">
-            <AvatarProfile />
-
+            <AvatarProfile url={data.userData.avatar_url}  bio={data.userData.bio} followers={data.userData.followers} repos={data.userData.public_repos} />
         </section>
 
-        <!-- Header / Navigation -->
-        <NavigationHeader />
+        <!-- Header & Content -->
+        <section class="flex flex-col justify-center items-center w-[900px]">
+            <!-- Header / Navigation -->
+            <NavigationHeader />
+            <!-- Content -->
+            <slot />
+        </section>
+
 
     </div>
 
-    <slot />
+
+
 
 </div>
+<Footer />

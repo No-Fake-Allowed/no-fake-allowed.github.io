@@ -1,6 +1,6 @@
-import type {PageServerLoad} from './$types';
+import type {PageLoad} from './$types';
 
-export const load:PageServerLoad = async ({data}) => {
+export const load:PageLoad = async ({data}) => {
     const component = await import(`../../../lib/content/blog/${data.post.slug}.md`);
     return {
         post:data.post,

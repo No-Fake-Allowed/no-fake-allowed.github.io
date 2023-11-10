@@ -5,23 +5,23 @@
 
 
 html {
-    font-family: "Outfit";
+    font-family: "Outfit", sans-serif;
 }
 
 h1, h2, h3, h4 {
-    font-family: "Crimson Pro";
+    font-family: "Crimson Pro", sans-serif;
 }
 
 h5, h6 {
-    font-family: "Outfit";
+    font-family: "Outfit", sans-serif;
 }
 
 span {
-    font-family: "Crimson Pro";
+    font-family: "Outfit", sans-serif;
 }
 
 p {
-    font-family: "Outfit";
+    font-family: "Outfit", sans-serif;
 }
 
 
@@ -31,4 +31,11 @@ p {
 
 .crimson {
     font-family: "crimson-pro";
+}
+
+
+.side-bar-divider {
+    display: block;
+    width:80%;
+    border-bottom: #9ca3af 1px solid;
 }

@@ -1,6 +1,8 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
+	"include": ["./src/markdown.d.ts"],
 	"compilerOptions": {
+		"types": ["vite/client", "node"],
 		"allowJs": true,
 		"checkJs": true,
 		"esModuleInterop": true,
